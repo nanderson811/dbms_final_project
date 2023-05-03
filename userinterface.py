@@ -20,3 +20,14 @@ class UserInterface:
         # return the output latitude and longitude coordinates
         return lat, lon
 
+    @staticmethod
+    def convertToXY(lat, lng):
+        inputcoords = pyproj.CRS.from_epsg(4326)
+
+        outputcoords = pyproj.CRS.from_epsg(3435)
+
+        converter = pyproj.Transformer.from_crs(inputcoords, outputcoords)
+
+        x, y = converter.transform(lat, lng)
+
+        return x, y

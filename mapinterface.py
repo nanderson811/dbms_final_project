@@ -32,3 +32,6 @@ class MapInterface:
     def get_counter(self):
         return self.__counter
 
+    def clear_map(self):
+        self.__gmap = gmplot.GoogleMapPlotter(self.__start_lat, self.__start_long, self.__zoom_level,
+                                              apikey=self.__apikey)

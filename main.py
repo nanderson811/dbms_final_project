@@ -50,13 +50,15 @@ def distance(x, y):
 def get_location():
     lat = request.json['lat']
     lng = request.json['lng']
-
+    radius = int(request.json['radius'])
+    crime_type = str(request.json['crime_type'])
+    print(crime_type)
     x, y = ui.convertToXY(lat, lng)
-    mymap.place_user(lat, lng, 5280*0.3060)
-    results = db.callProcedure('distanceWithin', [5280, x, y])
+    mymap.place_user(lat, lng, radius*0.3060)
+    results = db.callProcedure('distanceWithin', [radius, x, y])
     crime_coords = []
     for row in results:
-        if row[1] == 'HOMICIDE':
+        if row[1] == crime_type:
             crime_coords.append([row[4], row[5]])
     for coord in crime_coords:
         lat, lon = ui.convert(coord[0], coord[1])
@@ -69,10 +71,10 @@ def get_location():
         html = file.read()
 
     new_html = html.replace('</title>', '</title>'
-                                        '<div>'
+                                        '<h1>'
                                         '<a href=' + url_for('index') + '>Click here to go back to selection</a>'
-                                                                        '</div>')
-    print(new_html)
+                                                                        '</h1>')
+
     with open('templates/'+str(mymap.get_counter())+'chicago_map.html', 'w') as file:
         file.write(new_html)
 
@@ -82,6 +84,12 @@ def get_location():
 @app.route('/show_map')
 def show_map():
     return render_template(str(mymap.get_counter())+'chicago_map.html')
+
+
+@app.route('/clear_map', methods=['POST'])
+def clear_map():
+    mymap.clear_map()
+    return redirect('/')
 
 
 if __name__ == '__main__':

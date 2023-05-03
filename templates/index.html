@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <h1>Chicago Crime Map</h1>
+    <h4>Note: This application only works within the city boundaries
+      of Chicago, IL. Pins placed too far away will not produce any output
+    </h4>
     <title>Google Maps API</title>
     <form id="location-form">
       <label for="radius">Select radius:</label>
@@ -52,10 +56,26 @@
       
     </form>
     <br>
+    <form id="selectcolor" method="POST" action="/set_color">
+      <select name="colorselect" id="colorselect">
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="orange">Orange</option>
+        <option value="purple">Purple</option>
+        <option value="yellow">Yellow</option>
+      </select>
+      <button type="submit">Set Color for Crime Pins</button>
+      <p color={{color}}>Current color: {{ color }}</p>
+    </form>
+    <br>
+    <form id="otheroptions" method="POST" action="/other_options">
+      <button type="submit" name="other_options">Other Options for Data Visualization</button>
+    </form>
+    <br>
     <form id="clearmap" method="POST" action="/clear_map">
       <button type="submit" name="clear_map">Clear All Objects on Map</button>
     </form>
-    
+    <br>
     
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRYJk-2BLkeBUA0SPIGZPzAhDqzfdy4D0&callback=initMap"

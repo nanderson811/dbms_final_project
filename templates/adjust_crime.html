@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adjust Crime</title>
+</head>
+<h1><a href=/other_options>Click here to go back to Other Options</a></h1>
+<body>
+    <h1>Adjust Crime</h1>
+    <br>
+    <h2><u>Add or change row in Crime</u></h2>
+    <p>(If a crime ID is already present, all existing attributes will be changed to the new values)</p>
+    <form method="POST" action="/add_to_crime">
+        <label for="id">ID:</label>
+        <input type="number" id="id" name="id" required><br>
+      
+        <label for="dateOccurred">Date/Time Occurred:</label>
+        <input type="datetime-local" id="dateOccurred" name="dateOccurred" required><br>
+      
+        <label for="arrestMade">Arrest Made:</label>
+        <select id="arrestMade" name="arrestMade">
+          <option value="TRUE">TRUE</option>
+          <option value="FALSE">FALSE</option>
+        </select>
+        <br>
+      
+        <label for="isDomestic">Domestic:</label>
+        <select id="isDomestic" name="isDomestic">
+          <option value="TRUE">TRUE</option>
+          <option value="FALSE">FALSE</option>
+        </select>
+        <br>
+      
+        <label for="primaryType">Primary Type:</label>
+        <select name="primaryType" id="primaryType">
+          <option value="HOMICIDE">HOMICIDE</option>
+          <option value="CRIMINAL DAMAGE">CRIMINAL DAMAGE</option>
+          <option value="BATTERY">BATTERY</option>
+          <option value="OTHER OFFENSE">OTHER OFFENSE</option>
+          <option value="WEAPONS VIOLATION">WEAPONS VIOLATION</option>
+          <option value="THEFT">THEFT</option>
+          <option value="ASSAULT">ASSAULT</option>
+          <option value="CONCEALED CARRY LICENSE VIOLATION">CONCEALED CARRY LICENSE VIOLATION</option>
+          <option value="BURGLARY">BURGLARY</option>
+          <option value="CRIMINAL TRESPASS">CRIMINAL TRESPASS</option>
+          <option value="ROBBERY">ROBBERY</option>
+          <option value="CRIMINAL SEXUAL ASSAULT">CRIMINAL SEXUAL ASSAULT</option>
+          <option value="ARSON">ARSON</option>
+          <option value="OFFENSE INVOLVING CHILDREN">OFFENSE INVOLVING CHILDREN</option>
+          <option value="MOTOR VEHICLE THEFT">MOTOR VEHICLE THEFT</option>
+          <option value="NARCOTICS">NARCOTICS</option>
+          <option value="DECEPTIVE PRACTICE">DECEPTIVE PRACTICE</option>
+          <option value="PUBLIC PEACE VIOLATION">PUBLIC PEACE VIOLATION</option>
+          <option value="STALKING">STALKING</option>
+          <option value="KIDNAPPING">KIDNAPPING</option>
+          <option value="INTERFERENCE WITH PUBLIC OFFICER">INTERFERENCE WITH PUBLIC OFFICER</option>
+          <option value="INTIMIDATION">INTIMIDATION</option>
+          <option value="SEX OFFENSE">SEX OFFENSE</option>
+          <option value="LIQUOR LAW VIOLATION">LIQUOR LAW VIOLATION</option>
+          <option value="HUMAN TRAFFICKING">HUMAN TRAFFICKING</option>
+          <option value="PROSTITUTION">PROSTITUTION</option>
+          <option value="OTHER NARCOTIC VIOLATION">OTHER NARCOTIC VIOLATION</option>
+          <option value="OBSCENITY">OBSCENITY</option>
+          <option value="GAMBLING">GAMBLING</option>
+          <option value="NON-CRIMINAL">NON-CRIMINAL</option>
+          <option value="PUBLIC INDECENCY">PUBLIC INDECENCY</option>
+        </select>
+        <br>
+      
+        <label for="xCoordinate">X Coordinate:</label>
+        <input type="number" id="xCoordinate" name="xCoordinate" required><br>
+      
+        <label for="yCoordinate">Y Coordinate:</label>
+        <input type="number" id="yCoordinate" name="yCoordinate" required><br>
+      
+        <input type="submit" value="Submit and return to Interactive Map">
+      </form>
+      <br>
+      <br>
+      <h2><u>Delete Crime from Table</u></h2>
+      <p>Enter a crime ID and it will be removed from the table if it exists</p>
+      <form method='POST' action="/delete_crime">
+        <label for="id">ID:</label>
+        <input type="number" id="delid" name="delid" required><br>
+
+        <input type="submit" value="Delete item and return to Interactive Map">
+      </form>
+</body>
+</html>

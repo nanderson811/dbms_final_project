@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adjust IsInCase</title>
+</head>
+<h1><a href=/other_options>Click here to go back to Other Options</a></h1>
+<body>
+    <h1>Adjust IsInCase</h1>
+    <br>
+    <h2><u>Add/Change row in IsInCase</u></h2>
+    <form method="POST" action="/add_to_isincase">
+        <label for="id">Crime ID:</label>
+        <input type="number" id="id" name="id" required><br>
+      
+        <label for="casenum">Case Number (case sensitive):</label>
+        <input id="casenum" name="casenum" required><br>
+      
+        <input type="submit" value="Submit">
+      </form>
+      <h2><u>Delete row from IsInCase</u></h2>
+      <form method='POST' action="/delete_isincase">
+        <label for="id">Crime ID:</label>
+        <input type="number" id="id" name="id" required><br>
+
+        <input type="submit" value="Delete item and return to Interactive Map">
+      </form>  
+</body>
+</html>

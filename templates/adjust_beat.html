@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adjust Beat</title>
+</head>
+<h1><a href=/other_options>Click here to go back to Other Options</a></h1>
+<body>
+    <h1>Adjust Beat</h1>
+    <br>
+    <h2><u>Add/Change row in Beat</u></h2>
+    <form method="POST" action="/add_to_beat">
+        <label for="id">Beat ID:</label>
+        <input type="number" id="id" name="id" required><br>
+      
+        <label for="districtid">District ID:</label>
+        <input type="number" id="districtid" name="districtid" required><br>
+      
+        <input type="submit" value="Submit and return to Interactive Map">
+    </form>
+    <br>
+    <h2><u>Delete row from Beat</u></h2>
+      <form method='POST' action="/delete_beat">
+        <label for="id">Beat ID:</label>
+        <input type="number" id="id" name="id" required><br>
+
+        <input type="submit" value="Delete item and return to Interactive Map">
+      </form>  
+</body>
+</html>

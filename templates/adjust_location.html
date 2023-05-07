@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adjust Location</title>
+</head>
+<h1><a href=/other_options>Click here to go back to Other Options</a></h1>
+<body>
+    <h1>Adjust Location</h1>
+    <br>
+    <h2><u>Add/Change row in Location</u></h2>
+    <form method="POST" action="/add_to_location">
+        <label for="xc">X Coordinate:</label>
+        <input type="number" id="xc" name="xc" required><br>
+
+        <label for="yc">Y Coordinate:</label>
+        <input type="number" id="yc" name="yc" required><br>
+
+        <label for="lac">Latitude Coordinate:</label>
+        <input type="number" step="0.0001" id="lac" name="lac" required><br>
+
+        <label for="loc">Longitude Coordinate:</label>
+        <input type="number" step="0.0001" id="loc" name="loc" required><br>
+
+        <label for="loc">Location Type:</label>
+        <input  id="loctype" name="loctype" required><br>
+        
+        <label for="beatid">Beat ID:</label>
+        <input type="number" id="beatid" name="beatid" required><br>
+        <input type="submit" value="Submit">
+      </form>
+      <br>
+      <h2><u>Delete row from Location</u></h2>
+      <form method='POST' action="/delete_location">
+        <label for="xc">X Coordinate:</label>
+        <input type="number" id="xc" name="xc" required><br>
+
+        <label for="yc">Y Coordinate:</label>
+        <input type="number" id="yc" name="yc" required><br>
+
+        <input type="submit" value="Delete item and return to Interactive Map">
+      </form>
+
+</body>
+</html>

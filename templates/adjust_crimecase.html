@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adjust CrimeCase</title>
+</head>
+<h1><a href=/other_options>Click here to go back to Other Options</a></h1>
+<body>
+    <h1>Adjust CrimeCase</h1>
+    <br>
+    <h2><u>Add/Change row in CrimeCase</u></h2>
+    <form method="POST" action="/add_to_case">
+        <label for="casenum">Case Number (case sensitive):</label>
+        <input id="casenum" name="casenum" required><br>
+
+        <label for="caseDesc">Case Description:</label>
+        <input id="caseDesc" name="caseDesc" required><br>
+
+        <label for="dateUpdated">Date/Time Updated:</label>
+        <input type="datetime-local" id="dateUpdated" name="dateUpdated" required><br>
+      
+        <input type="submit" value="Submit and return to Interactive Map">
+      </form>
+      <h2><u>Delete row from CrimeCase</u></h2>
+      <form method='POST' action="/delete_case">
+        <label for="casenum">Case Number (case sensitive):</label>
+        <input id="casenum" name="casenum" required><br>
+
+        <input type="submit" value="Delete item and return to Interactive Map">
+      </form>
+</body>
+</html>
